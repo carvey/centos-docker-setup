@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo yum install -y vim git tmux
+sudo yum install -y vim git tmux bash-completion
 wget https://raw.githubusercontent.com/carvey/vim-setup/master/vim-setup
 . vim-setup
 cd ~
@@ -16,6 +16,8 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
 
 sudo systemctl start docker
 sudo systemctl enable docker
